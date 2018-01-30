@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+    <h1>Главная</h1>
+    {% for article in articles %}
+        <div class="row">
+            <div class="col-md-12 article">
+                <h4><a href="{% url 'article' article.id %}"> {{ article.title }}</a></h4>
+                <div class="article_text">
+                    {{ article.get_short_text }}
+                    <a href="{% url 'article' article.id %}"><i class="fa fa-book" aria-hidden="true"></i>Читать дальше</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+{% endblock %}

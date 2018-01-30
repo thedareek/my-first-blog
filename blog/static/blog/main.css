@@ -1,0 +1,114 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #C9C9C9;
+}
+
+.content_all{
+    margin-top: 0px;
+}
+
+h4 {
+    color: red;
+	margin: 0;
+	padding: 0;
+}
+
+
+/*header*/
+
+header {
+}
+
+.navbar {
+	font-weight: 400;
+	font-size: 16px;
+	background-color: #000;
+	padding-bottom: 40px;
+}
+
+.icon-bar {
+	background-color: #fff;
+}
+
+.navbar-brand > img{
+	height: 40px;
+}
+
+.navbar-static-top {
+	padding-top: 20px;
+
+}
+
+.nav > li > a{
+	padding-top: 14px;
+	padding-bottom : 5px;
+}
+
+.navbar-nav a {
+	color: #fff;
+	margin-top: 10px;
+}
+
+
+.nav > li > a:hover{
+	background-color: transparent;
+	color: #ff0000;
+}
+
+.nav > li > a:focus{
+	background-color: transparent;
+	color: #ff0000;
+}
+
+.nav > li > a:active{
+	background-color: transparent;
+	color: #fff;
+}
+
+.navbar-nav a {
+	color: #fff;
+	margin-top: 10px;
+}
+
+.navbar-nav .active {
+		color: #ff0000;
+}
+/*Статьи*/
+
+.article {
+	background-color: #fff;
+	margin-bottom: 20px;
+	padding-top: 25px;
+	padding-bottom: 20px;
+}
+
+.article h4 {
+	margin-bottom: 15px;
+}
+
+.article  a {
+	text-decoration: none;
+}
+
+.article_text{
+
+}
+
+.article_text a{
+	display: block;
+	color: #4671D5;
+	margin-top:10px;
+	border: 1px solid #2A4480	;
+	width: 135px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.article_text a:hover {
+	background-color: #2A4480;
+	color: #ffffff;
+}
+
+.article_text a .fa{
+	margin-right:5px;
+}
