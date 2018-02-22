@@ -5,6 +5,56 @@
 {% endblock %}
 
 {% block content %}
-    <h1>{{ article.title}}</h1>
-    <p>{{ article.text }}</p>
+    <div class="col-md-9 content_all">
+        <div class="article">
+            <div class="page-name">
+                <div>
+                    <span><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+                    <span class="article_title">{{ article.title }}</span>
+                </div>
+            </div>
+            <div class="article_img">
+                <img src="{{ article.image.url}}" alt="gagag" class="img-responsive">
+            </div>
+            <div class="article_text">
+                {{ article.text }}
+            </div>
+        </div>
+
+        <div class="article_comments">
+            <div class="comments_header">
+                <div>
+                    <span><i class="fa fa-comments-o" aria-hidden="true"></i></span>
+                    <span class="comments_title">Комментарии</span>
+                </div>
+            </div>
+            <div class="comments_all">
+                {% for comment in comments %}
+                    <div class="comment">
+                        <div class="comment_author">
+                            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                            <span class="comment_author_name">{{ comment.comments_author }}</span>
+                            <span class="comment_author_date">{{ comment.comments_date }}</span>
+                        </div>
+                        <div class="comment_text">{{ comment.comments_text }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="comment_form">
+            <form action="/article/addcomment/{{ article.id }}/" method="post">
+                {% csrf_token %}
+                <div class="comment_form_header">
+                    <div>
+                        <span><i class="fa fa-commenting-o" aria-hidden="true"></i></span>
+                        <span class="comment_form_title">Добавить комментарий</span>
+                    </div>
+                </div>
+                {% for field in form %}
+                    <div class="comment_form_field">{{ field }}</div>
+                {% endfor %}
+                <input type="submit" class="btn btn-danger" value="Добавить комментарий">
+            </form>
+        </div>
+    </div>
 {% endblock %}

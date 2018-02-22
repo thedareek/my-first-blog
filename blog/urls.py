@@ -20,5 +20,6 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about,  name='about'),
-    re_path(r'article/(?P<article_id>[0-9]+)/$', views.show_article, name='article')
+    re_path(r'article/(?P<article_id>[0-9]+)/$', views.show_article, name='article'),
+    re_path(r'article/addcomment/(?P<article_id>[0-9]+)/$', views.addcomment, name='addcomment')
 ]

@@ -1,22 +1,36 @@
 {% extends 'blog/base.html' %}
+{% load staticfiles%}
 
 {% block title %}
 Home
 {% endblock %}
 
 {% block content %}
+<div class="col-md-9 content_all">
+    <div class="header-img">
+        <img src="{% static 'blog/img/header.jpg' %}" alt="" class="img-responsive">
+        <div class="header-text">
+            <h1>WE ARE CODE CAFE</h1>
+            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+        </div>
+    </div>
 
-    <h1>Главная</h1>
     {% for article in articles %}
-        <div class="row">
-            <div class="col-md-12 article">
-                <h4><a href="{% url 'article' article.id %}"> {{ article.title }}</a></h4>
+            <div class="article">
+                <div class="page-name">
+                    <div>
+                        <span><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+                        <a href="{% url 'article' article.id %}">{{ article.title }}</a>
+                    </div>
+                </div>
+                <div class="article_img">
+                    <img src="{{ article.image.url}}" alt="gagag" class="img-responsive">
+                </div>
                 <div class="article_text">
-                    {{ article.get_short_text }}
-                    <a href="{% url 'article' article.id %}"><i class="fa fa-book" aria-hidden="true"></i>Читать дальше</a>
+                    {{ article.get_short_text }}..
+                    <a href="{% url 'article' article.id %}">Читать дальше</a>
                 </div>
             </div>
-        </div>
         {% endfor %}
-
+</div>
 {% endblock %}
